@@ -397,7 +397,7 @@ async def pick_winner(message: types.Message):
         pool.extend([(u_id, name)] * (1 + pts))
 
     winners = random.sample(pool, min(count, len(set(pool))))
-    unique_winners = list({w[0]: w[1] for w[1], w[0] in [(w[1], w[0]) for w in winners]}.items())
+unique_winners = list({w[0]: w[1] for w in winners}.items())
 
     text = "🏆 **GʻOLIBLAR:**\n\n"
     for idx, (w_id, name) in enumerate(unique_winners, 1):
